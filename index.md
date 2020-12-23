@@ -4,25 +4,17 @@
 ## 小组作业
 #### 文字说明
 
-Download Files用例图说明：
-作者：李杰,葛洲宇
-用例图建模过程分析：
-一：根据上述的Download Files中的功能分析，对其进行如下描述 Files Manage中总共有以下的几大用例：
-1.查找文件（Search Files）
-2.下载文件（Download Files）
-3.克隆或下载文件（Clone or Download）
-4.源文件下载（Raw）
-5.桌面打开（Open  in  Desktop）
-6.Zip下载（DwonloadZip）
-其中Download Files中主要有两大参与者：
-1 用户（User）
-2管理员（Administrator） 
-二：模型分析
-1.管理员（Administrator）和用户（User）都共同有下载文件（Download Files）
-2.下载文件（Download Files）的下载之前应该有查找文件（Search Files）固然有依赖关系;下载文件（Download Files）分为两种，分别是克隆或下载文件（Clone or Download）和源文件下载（Raw），存在的是泛化关系。
-3.   克隆或下载文件（Clone or Download）中又分为桌面打开（Open  in  Desktop）以及Zip下载（DwonloadZip）两种方式；
-三．模型建立： 
-1.用户（User）和管理员（Administrator）都共同指向下载文件（Download Files）
-2.下载文件（Download Files）指向查找文件（Search Files），为依赖关系;
-3.克隆或下载文件（Clone or Download）和源文件下载（Raw）共同指向下载文件（Download Files）并且是泛化关系；
-4.桌面打开（Open  in  Desktop）以及Zip下载（DwonloadZip）指向克隆或下载文件（Clone or Download），并且是extend关系；
+本人负责小组作业中第二题的前三题，解答如下：
+1）该功能一共应该包含哪几个类
+答：该功能应该包含学生类，考试科目类，教师类，公众号系统类。
+2）每个类的属性，方法应该是什么，有什么作用，权限该是什么
+答：学生类的属性应该有：①学号（int） ②姓名（string）  ③系别（string）；操作包括：成绩下载、学期筛选、查看成绩；学号是私有属性，姓名、专业、系别都是公有属性。
+
+考试科目的属性应该有：①课程名（string）②成绩（int）③学分（int）；操作包括：获取课程信息、获取课程成绩；成绩是私有属性，课程名和学分都是公有属性。
+
+教师类属性应该有：教师号（int）姓名（string）所属课程（string）；操作包括：成绩下载、学期筛选、查看成绩、成绩推送；教师号是私有属性，姓名、所属课程都是公有属性。
+
+公众号系统类的属性应该有：①用户名（string）②密码（int）；操作包括：登陆系统、推送成绩。密码是私有属性，用户名是公有属性。
+3）类之间分别有什么关系
+答：学生类和考试科目类的关系应为依赖关系，学生类和教师类的关系应为依赖关系，学生类和公众号系统类的关系应为实现关系，考试科目类和教师类的关系应为依赖关系，考试科目类和公众号系统类应为关联关系，教师类和公众号系统类应为实现关系。
+第四题作图部分由小组另一成员葛洲宇完成
